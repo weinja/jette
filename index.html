@@ -6,6 +6,7 @@
 <title>Eine wichtige Frage 🍦</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap');
 
 * {
@@ -19,9 +20,10 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
+
+/* =========================================================
    STARTSEITE
-========================= */
+========================================================= */
 
 .start-page {
     min-height: 100vh;
@@ -40,7 +42,7 @@ body {
 }
 
 .start-card {
-    background: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.80);
     backdrop-filter: blur(8px);
     padding: 50px 55px;
     border-radius: 30px;
@@ -92,6 +94,7 @@ h1 {
     position: relative;
 }
 
+
 /* Herzen */
 
 .heart {
@@ -102,26 +105,32 @@ h1 {
 }
 
 @keyframes wobble {
+
     0%,100% {
         transform: rotate(-8deg) translateY(0);
     }
+
     50% {
         transform: rotate(8deg) translateY(-12px);
     }
+
 }
 
-/* =========================
+
+/* =========================================================
    EISSEITE
-========================= */
+========================================================= */
 
 .ice-page {
     display: none;
     min-height: 100vh;
     padding: 35px 20px 50px;
+
     background:
         radial-gradient(circle at 10% 20%, rgba(255,255,255,.3) 0 3px, transparent 4px),
         radial-gradient(circle at 90% 80%, rgba(255,255,255,.25) 0 3px, transparent 4px),
         #f8c3d4;
+
     background-size: 80px 80px, 110px 110px;
 }
 
@@ -142,17 +151,19 @@ h1 {
 .shop {
     max-width: 1150px;
     margin: auto;
+
     display: grid;
     grid-template-columns: 1fr 1.15fr;
     gap: 35px;
 }
 
-/* =========================
+
+/* =========================================================
    EISSORTEN
-========================= */
+========================================================= */
 
 .flavor-box {
-    background: rgba(255,255,255,.82);
+    background: rgba(255,255,255,.84);
     border-radius: 28px;
     padding: 25px;
     box-shadow: 0 15px 40px rgba(100,30,50,.12);
@@ -190,6 +201,7 @@ h1 {
     height: 55px;
     border-radius: 50%;
     margin: auto;
+
     box-shadow:
         inset -7px -7px 10px rgba(0,0,0,.08),
         inset 6px 5px 8px rgba(255,255,255,.3),
@@ -202,12 +214,13 @@ h1 {
     color: #633340;
 }
 
-/* =========================
+
+/* =========================================================
    EIS-ZUSAMMENBAU
-========================= */
+========================================================= */
 
 .build-box {
-    background: rgba(255,255,255,.82);
+    background: rgba(255,255,255,.84);
     border-radius: 28px;
     padding: 25px;
     box-shadow: 0 15px 40px rgba(100,30,50,.12);
@@ -215,31 +228,40 @@ h1 {
 }
 
 .ice-area {
-    height: 510px;
+    height: 520px;
+
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
     position: relative;
 }
 
+
 /*
-   DER KOMPLETTE EISAUFBAU
-   Alles befindet sich innerhalb derselben
-   "cone-wrapper"-Fläche.
+   DER KOMPLETTE EIS-AUFBAU
+
+   Alles befindet sich innerhalb
+   eines einzigen Containers.
 */
 
 .ice-creation {
-    width: 250px;
-    height: 450px;
+    width: 260px;
+    height: 470px;
     position: relative;
 }
 
-/* Waffel */
+
+/* =========================================================
+   WAFFEL
+========================================================= */
 
 .cone {
     position: absolute;
+
     bottom: 0;
     left: 50%;
+
     transform: translateX(-50%);
 
     width: 150px;
@@ -253,6 +275,7 @@ h1 {
             transparent 2px,
             transparent 18px
         ),
+
         repeating-linear-gradient(
             -45deg,
             rgba(120,75,30,.25) 0px,
@@ -260,283 +283,551 @@ h1 {
             transparent 2px,
             transparent 18px
         ),
+
         linear-gradient(#e8ae58,#d9973d);
 
-    clip-path: polygon(7% 0, 93% 0, 50% 100%);
-    box-shadow: inset 0 0 15px rgba(100,50,10,.18);
+    clip-path: polygon(
+        7% 0,
+        93% 0,
+        50% 100%
+    );
+
+    box-shadow:
+        inset 0 0 15px rgba(100,50,10,.18);
+
+    z-index: 3;
 }
 
-/* obere Waffelkante */
+
+/* Waffelrand */
 
 .cone-top {
     position: absolute;
+
     bottom: 218px;
     left: 50%;
+
     transform: translateX(-50%);
 
     width: 154px;
     height: 27px;
+
     border-radius: 50%;
+
     background: #eab25d;
+
     z-index: 4;
 }
 
-/* Kugeln */
+
+/* =========================================================
+   EISKUGELN
+========================================================= */
 
 .scoops {
     position: absolute;
+
     bottom: 215px;
     left: 50%;
+
     transform: translateX(-50%);
-    width: 210px;
-    height: 190px;
+
+    width: 220px;
+    height: 210px;
+
     z-index: 6;
 }
 
-/* jede Kugel wird automatisch schön gestapelt */
+
+/*
+   Jede Kugel bekommt automatisch
+   eine Position innerhalb des Stapels.
+*/
 
 .scoop {
     position: absolute;
+
     width: 105px;
     height: 105px;
+
     border-radius: 50%;
 
     box-shadow:
         inset -12px -12px 18px rgba(0,0,0,.10),
-        inset 10px 8px 14px rgba(255,255,255,.25),
+        inset 10px 8px 14px rgba(255,255,255,.28),
         0 5px 8px rgba(80,30,30,.18);
 
-    transition: all .3s ease;
+    transition:
+        bottom .35s ease,
+        left .35s ease,
+        transform .25s ease;
+
+    z-index: 6;
 }
 
-/* Positionen der 5 möglichen Kugeln */
 
-.scoop:nth-child(1) {
-    left: 52px;
+/*
+   1 Kugel
+*/
+
+.scoops .scoop:nth-child(1) {
+    left: 57px;
     bottom: 0;
 }
 
-.scoop:nth-child(2) {
-    left: 5px;
+
+/*
+   2 Kugeln
+*/
+
+.scoops .scoop:nth-child(2) {
+    left: 12px;
     bottom: 48px;
 }
 
-.scoop:nth-child(3) {
-    left: 100px;
+.scoops .scoop:nth-child(2):last-child {
+    left: 57px;
+    bottom: 0;
+}
+
+
+/*
+   3 Kugeln
+*/
+
+.scoops .scoop:nth-child(3) {
+    left: 102px;
     bottom: 48px;
 }
 
-.scoop:nth-child(4) {
-    left: 28px;
-    bottom: 95px;
+
+/*
+   4 Kugeln
+*/
+
+.scoops .scoop:nth-child(4) {
+    left: 35px;
+    bottom: 96px;
 }
 
-.scoop:nth-child(5) {
-    left: 78px;
-    bottom: 95px;
+
+/*
+   5 Kugeln
+*/
+
+.scoops .scoop:nth-child(5) {
+    left: 80px;
+    bottom: 96px;
 }
 
-/* =========================
-   TOPPINGS
-========================= */
 
-/* Sahne */
+/* =========================================================
+   AUTOMATISCHE TOPPING-POSITION
+========================================================= */
+
+
+/*
+   1 KUGEL
+*/
+
+.scoops-1 .whipped-cream {
+    bottom: 298px;
+}
+
+.scoops-1 .chocolate-sauce {
+    bottom: 278px;
+}
+
+.scoops-1 .sprinkles {
+    bottom: 293px;
+}
+
+
+/*
+   2 KUGELN
+*/
+
+.scoops-2 .whipped-cream {
+    bottom: 345px;
+}
+
+.scoops-2 .chocolate-sauce {
+    bottom: 325px;
+}
+
+.scoops-2 .sprinkles {
+    bottom: 340px;
+}
+
+
+/*
+   3 KUGELN
+*/
+
+.scoops-3 .whipped-cream {
+    bottom: 345px;
+}
+
+.scoops-3 .chocolate-sauce {
+    bottom: 325px;
+}
+
+.scoops-3 .sprinkles {
+    bottom: 340px;
+}
+
+
+/*
+   4 KUGELN
+*/
+
+.scoops-4 .whipped-cream {
+    bottom: 393px;
+}
+
+.scoops-4 .chocolate-sauce {
+    bottom: 373px;
+}
+
+.scoops-4 .sprinkles {
+    bottom: 388px;
+}
+
+
+/*
+   5 KUGELN
+*/
+
+.scoops-5 .whipped-cream {
+    bottom: 393px;
+}
+
+.scoops-5 .chocolate-sauce {
+    bottom: 373px;
+}
+
+.scoops-5 .sprinkles {
+    bottom: 388px;
+}
+
+
+/* =========================================================
+   SAHNE
+========================================================= */
 
 .whipped-cream {
     position: absolute;
+
     left: 50%;
-    bottom: 165px;
+
     transform: translateX(-50%);
-    width: 95px;
-    height: 105px;
-    z-index: 12;
+
+    width: 105px;
+    height: 110px;
+
+    z-index: 15;
+
     pointer-events: none;
+
+    transition: bottom .35s ease;
 }
+
+
+/* Sahne-Kleckse */
 
 .cream-blob {
     position: absolute;
-    background: #fffaf5;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            #ffffff 0%,
+            #fffaf5 65%,
+            #eee6df 100%
+        );
+
     border-radius: 50%;
+
     box-shadow:
         inset -5px -5px 8px rgba(180,150,140,.12),
         0 3px 5px rgba(80,40,40,.12);
 }
 
+
+/* Sahne unten */
+
 .cream-blob:nth-child(1) {
-    width: 58px;
-    height: 58px;
-    left: 18px;
+    width: 62px;
+    height: 62px;
+
+    left: 21px;
     bottom: 0;
 }
 
+
+/* links */
+
 .cream-blob:nth-child(2) {
-    width: 55px;
-    height: 55px;
+    width: 57px;
+    height: 57px;
+
     left: 2px;
-    bottom: 28px;
+    bottom: 30px;
 }
+
+
+/* rechts */
 
 .cream-blob:nth-child(3) {
-    width: 55px;
-    height: 55px;
+    width: 57px;
+    height: 57px;
+
     right: 2px;
-    bottom: 28px;
+    bottom: 30px;
 }
+
+
+/* Mitte */
 
 .cream-blob:nth-child(4) {
-    width: 48px;
-    height: 48px;
-    left: 24px;
-    bottom: 55px;
+    width: 50px;
+    height: 50px;
+
+    left: 28px;
+    bottom: 57px;
 }
+
+
+/* Spitze */
 
 .cream-blob:nth-child(5) {
-    width: 36px;
-    height: 36px;
-    left: 31px;
-    bottom: 73px;
+    width: 37px;
+    height: 37px;
+
+    left: 34px;
+    bottom: 75px;
 }
 
-/* Schokosoße */
+
+/* =========================================================
+   SCHOKOSOSSE
+========================================================= */
 
 .chocolate-sauce {
     position: absolute;
-    bottom: 205px;
+
     left: 50%;
+
     transform: translateX(-50%);
-    width: 125px;
-    height: 90px;
-    z-index: 13;
+
+    width: 135px;
+    height: 100px;
+
+    z-index: 16;
+
     pointer-events: none;
+
+    transition: bottom .35s ease;
 }
 
-.chocolate-sauce .sauce-top {
+
+/* obere Soße */
+
+.sauce-top {
     position: absolute;
-    top: 15px;
+
+    top: 12px;
     left: 5px;
-    width: 115px;
-    height: 35px;
-    background: #542313;
+
+    width: 125px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #6d321c,
+            #4b1d0f
+        );
+
     border-radius: 50%;
-    box-shadow: inset 0 4px 4px rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 4px 5px rgba(255,255,255,.08),
+        0 3px 4px rgba(50,20,10,.18);
 }
+
+
+/* Tropfen */
 
 .drip {
     position: absolute;
-    background: #542313;
-    width: 18px;
-    border-radius: 0 0 15px 15px;
-    top: 32px;
+
+    top: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #4a1b0e,
+        #63301a
+    );
+
+    border-radius:
+        0 0 15px 15px;
+
+    box-shadow:
+        1px 2px 3px rgba(50,20,10,.15);
 }
 
+
 .drip:nth-child(2) {
-    left: 17px;
-    height: 30px;
+    left: 16px;
+    width: 19px;
+    height: 31px;
 }
 
 .drip:nth-child(3) {
-    left: 45px;
-    height: 47px;
+    left: 46px;
+    width: 20px;
+    height: 49px;
 }
 
 .drip:nth-child(4) {
-    left: 78px;
-    height: 25px;
+    left: 80px;
+    width: 18px;
+    height: 27px;
 }
 
 .drip:nth-child(5) {
-    right: 8px;
-    height: 38px;
+    right: 10px;
+    width: 18px;
+    height: 39px;
 }
 
-/* Streusel */
+
+/* =========================================================
+   STREUSEL
+========================================================= */
 
 .sprinkles {
     position: absolute;
+
     left: 50%;
-    bottom: 218px;
+
     transform: translateX(-50%);
-    width: 145px;
-    height: 90px;
-    z-index: 15;
+
+    width: 155px;
+    height: 95px;
+
+    z-index: 18;
+
     pointer-events: none;
+
+    transition: bottom .35s ease;
 }
+
 
 .sprinkle {
     position: absolute;
+
     width: 7px;
     height: 20px;
-    border-radius: 4px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.15);
+}
+
+
+/* einzelne Streusel */
+
+.sprinkle:nth-child(1) {
+    left: 18px;
+    top: 25px;
     transform: rotate(30deg);
     background: #d44b62;
 }
 
 .sprinkle:nth-child(2) {
-    left: 20px;
-    top: 22px;
+    left: 40px;
+    top: 10px;
     transform: rotate(-25deg);
     background: #4c7dce;
 }
 
 .sprinkle:nth-child(3) {
-    left: 43px;
-    top: 8px;
+    left: 65px;
+    top: 22px;
     transform: rotate(55deg);
     background: #e5a72e;
 }
 
 .sprinkle:nth-child(4) {
-    left: 70px;
-    top: 27px;
+    left: 92px;
+    top: 8px;
     transform: rotate(-45deg);
     background: #5ca85c;
 }
 
 .sprinkle:nth-child(5) {
-    left: 95px;
-    top: 10px;
+    left: 120px;
+    top: 25px;
     transform: rotate(20deg);
     background: #d44b62;
 }
 
 .sprinkle:nth-child(6) {
-    left: 120px;
-    top: 30px;
+    left: 135px;
+    top: 48px;
     transform: rotate(-30deg);
     background: #e5a72e;
 }
 
 .sprinkle:nth-child(7) {
-    left: 35px;
-    top: 48px;
+    left: 32px;
+    top: 50px;
     transform: rotate(65deg);
     background: #9b62c8;
 }
 
 .sprinkle:nth-child(8) {
-    left: 62px;
-    top: 54px;
+    left: 57px;
+    top: 52px;
     transform: rotate(-15deg);
     background: #4c7dce;
 }
 
 .sprinkle:nth-child(9) {
-    left: 90px;
-    top: 50px;
+    left: 83px;
+    top: 48px;
     transform: rotate(40deg);
     background: #e56b35;
 }
 
 .sprinkle:nth-child(10) {
-    left: 110px;
-    top: 55px;
+    left: 108px;
+    top: 57px;
     transform: rotate(-50deg);
     background: #5ca85c;
 }
 
-/* =========================
-   TOPPING BUTTONS
-========================= */
+.sprinkle:nth-child(11) {
+    left: 48px;
+    top: 70px;
+    transform: rotate(25deg);
+    background: #d44b62;
+}
+
+.sprinkle:nth-child(12) {
+    left: 78px;
+    top: 70px;
+    transform: rotate(-40deg);
+    background: #e5a72e;
+}
+
+
+/* =========================================================
+   TOPPING-BUTTONS
+========================================================= */
 
 .toppings {
     display: flex;
@@ -550,10 +841,15 @@ h1 {
     border: 2px solid #b85a70;
     background: white;
     color: #743143;
+
     padding: 10px 15px;
+
     border-radius: 999px;
+
     font-weight: 700;
+
     cursor: pointer;
+
     transition: .2s;
 }
 
@@ -566,19 +862,31 @@ h1 {
     color: white;
 }
 
-/* bezahlen */
+
+/* =========================================================
+   BEZAHLEN
+========================================================= */
 
 .pay-button {
     margin-top: 20px;
+
     border: none;
+
     padding: 14px 35px;
+
     border-radius: 999px;
+
     background: #791f32;
     color: white;
+
     font-size: 18px;
     font-weight: 700;
+
     cursor: pointer;
+
     opacity: .4;
+
+    transition: .2s;
 }
 
 .pay-button.enabled {
@@ -589,53 +897,73 @@ h1 {
     transform: scale(1.04);
 }
 
-/* =========================
-   PAYMENT
-========================= */
+
+/* =========================================================
+   ZAHLUNG
+========================================================= */
 
 .payment-overlay {
     position: fixed;
+
     inset: 0;
+
     background: rgba(90,20,40,.55);
+
     display: none;
+
     align-items: center;
     justify-content: center;
+
     z-index: 100;
 }
 
 .payment-card {
     background: white;
+
     padding: 45px;
+
     border-radius: 25px;
+
     text-align: center;
 }
 
 .spinner {
     width: 55px;
     height: 55px;
+
     border: 6px solid #f1ccd6;
     border-top-color: #791f32;
+
     border-radius: 50%;
+
     animation: spin 1s linear infinite;
+
     margin: 0 auto 20px;
 }
 
 @keyframes spin {
+
     to {
         transform: rotate(360deg);
     }
+
 }
 
-/* =========================
-   FINAL
-========================= */
+
+/* =========================================================
+   FINALE
+========================================================= */
 
 .final-page {
     display: none;
+
     min-height: 100vh;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     background:
         radial-gradient(circle at 20% 20%, rgba(255,255,255,.3) 0 3px, transparent 4px),
         #f6b6c9;
@@ -643,8 +971,11 @@ h1 {
 
 .final-card {
     background: rgba(255,255,255,.85);
+
     padding: 55px;
+
     border-radius: 30px;
+
     box-shadow: 0 20px 50px rgba(100,30,50,.15);
 }
 
@@ -657,9 +988,13 @@ h1 {
     color: #743143;
 }
 
-/* Handy */
+
+/* =========================================================
+   HANDY
+========================================================= */
 
 @media(max-width: 800px) {
+
     .shop {
         grid-template-columns: 1fr;
     }
@@ -671,23 +1006,42 @@ h1 {
     .shop-title {
         font-size: 34px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     START
-========================= -->
+
+<!-- =======================================================
+     STARTSEITE
+======================================================= -->
 
 <div class="start-page" id="startPage">
 
-    <div class="heart" style="top:10%;left:10%;">♥</div>
-    <div class="heart" style="top:20%;right:12%;animation-delay:.7s;">♥</div>
-    <div class="heart" style="bottom:12%;left:17%;animation-delay:1.2s;">♥</div>
-    <div class="heart" style="bottom:20%;right:18%;animation-delay:1.8s;">♥</div>
-    <div class="heart" style="top:50%;left:4%;animation-delay:.4s;">♥</div>
+    <div class="heart" style="top:10%;left:10%;">
+        ♥
+    </div>
+
+    <div class="heart" style="top:20%;right:12%;animation-delay:.7s;">
+        ♥
+    </div>
+
+    <div class="heart" style="bottom:12%;left:17%;animation-delay:1.2s;">
+        ♥
+    </div>
+
+    <div class="heart" style="bottom:20%;right:18%;animation-delay:1.8s;">
+        ♥
+    </div>
+
+    <div class="heart" style="top:50%;left:4%;animation-delay:.4s;">
+        ♥
+    </div>
+
 
     <div class="start-card">
 
@@ -701,6 +1055,7 @@ h1 {
         </div>
 
         <div class="buttons">
+
             <button class="main-button" id="yesButton">
                 Ja
             </button>
@@ -708,15 +1063,18 @@ h1 {
             <button class="main-button" id="noButton">
                 Nein
             </button>
+
         </div>
 
     </div>
+
 </div>
 
 
-<!-- =========================
+
+<!-- =======================================================
      EISLADEN
-========================= -->
+======================================================= -->
 
 <div class="ice-page" id="icePage">
 
@@ -728,141 +1086,316 @@ h1 {
         Stell dir dein Eis zusammen!
     </p>
 
+
     <div class="shop">
 
-        <!-- SORTEN -->
+
+        <!-- EISSORTEN -->
 
         <div class="flavor-box">
 
-            <h2>🍨 Eissorten</h2>
+            <h2>
+                🍨 Eissorten
+            </h2>
+
 
             <div class="flavors">
 
-                <button class="flavor" data-color="#ed8e9e">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Erdbeer</div>
+
+                <button
+                    class="flavor"
+                    data-color="#ed8e9e"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#ed8e9e;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Erdbeer
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#fff1c9">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Vanille</div>
+
+                <button
+                    class="flavor"
+                    data-color="#fff1c9"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#fff1c9;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Vanille
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#70452e">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Schoko</div>
+
+                <button
+                    class="flavor"
+                    data-color="#70452e"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#70452e;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Schoko
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#c89a72">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Kinder Bueno</div>
+
+                <button
+                    class="flavor"
+                    data-color="#c89a72"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#c89a72;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Kinder Bueno
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#e4dfd5">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Oreo</div>
+
+                <button
+                    class="flavor"
+                    data-color="#e4dfd5"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#e4dfd5;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Oreo
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#704128">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Nutella</div>
+
+                <button
+                    class="flavor"
+                    data-color="#704128"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#704128;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Nutella
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#8b5137">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Brownie</div>
+
+                <button
+                    class="flavor"
+                    data-color="#8b5137"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#8b5137;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Brownie
+                    </div>
+
                 </button>
 
-                <button class="flavor" data-color="#b88958">
-                    <div class="flavor-ball"></div>
-                    <div class="flavor-name">Haselnuss</div>
+
+                <button
+                    class="flavor"
+                    data-color="#b88958"
+                >
+
+                    <div
+                        class="flavor-ball"
+                        style="background:#b88958;"
+                    ></div>
+
+                    <div class="flavor-name">
+                        Haselnuss
+                    </div>
+
                 </button>
+
 
             </div>
 
         </div>
+
 
 
         <!-- EIS -->
 
         <div class="build-box">
 
-            <h2>🍦 Dein Eis</h2>
+            <h2>
+                🍦 Dein Eis
+            </h2>
+
 
             <div class="ice-area">
 
-                <div class="ice-creation">
 
-                    <!-- Kugeln -->
-                    <div class="scoops" id="scoops"></div>
+                <div
+                    class="ice-creation"
+                    id="iceCreation"
+                >
 
-                    <!-- Toppings -->
-                    <div id="creamContainer"></div>
-                    <div id="sauceContainer"></div>
-                    <div id="sprinklesContainer"></div>
 
-                    <!-- Waffel -->
+                    <!-- EISKUGELN -->
+
+                    <div
+                        class="scoops"
+                        id="scoops"
+                    ></div>
+
+
+                    <!-- SAHNE -->
+
+                    <div
+                        id="creamContainer"
+                    ></div>
+
+
+                    <!-- SCHOKOSOSSE -->
+
+                    <div
+                        id="sauceContainer"
+                    ></div>
+
+
+                    <!-- STREUSEL -->
+
+                    <div
+                        id="sprinklesContainer"
+                    ></div>
+
+
+                    <!-- WAFFEL -->
+
                     <div class="cone-top"></div>
+
                     <div class="cone"></div>
+
 
                 </div>
 
             </div>
 
+
+
+            <!-- TOPPINGS -->
+
             <div class="toppings">
 
-                <button class="topping-button" id="creamButton">
+
+                <button
+                    class="topping-button"
+                    id="creamButton"
+                >
                     🍦 Sahne oben drauf
                 </button>
 
-                <button class="topping-button" id="chocolateButton">
+
+                <button
+                    class="topping-button"
+                    id="chocolateButton"
+                >
                     🍫 Schokosoße oben drauf
                 </button>
 
-                <button class="topping-button" id="sprinklesButton">
+
+                <button
+                    class="topping-button"
+                    id="sprinklesButton"
+                >
                     🌈 Streusel oben drauf
                 </button>
 
+
             </div>
 
-            <button class="pay-button" id="payButton">
+
+
+            <!-- BEZAHLEN -->
+
+            <button
+                class="pay-button"
+                id="payButton"
+            >
                 💳 Eis bezahlen
             </button>
+
 
         </div>
 
     </div>
+
 </div>
 
 
-<!-- =========================
-     PAYMENT
-========================= -->
 
-<div class="payment-overlay" id="paymentOverlay">
+<!-- =======================================================
+     ZAHLUNG
+======================================================= -->
+
+<div
+    class="payment-overlay"
+    id="paymentOverlay"
+>
 
     <div class="payment-card">
 
         <div class="spinner"></div>
 
-        <h2>Eis wird bezahlt...</h2>
+        <h2>
+            Eis wird bezahlt...
+        </h2>
 
-        <p>🍦 Einen kleinen Moment...</p>
+        <p>
+            🍦 Einen kleinen Moment...
+        </p>
 
     </div>
 
 </div>
 
 
-<!-- =========================
-     FINAL
-========================= -->
 
-<div class="final-page" id="finalPage">
+<!-- =======================================================
+     FINALE
+======================================================= -->
+
+<div
+    class="final-page"
+    id="finalPage"
+>
 
     <div class="final-card">
 
-        <h1>Gute Wahl. ❤️</h1>
+        <h1>
+            Gute Wahl. ❤️
+        </h1>
 
         <p>
             Finja freut sich.
@@ -873,121 +1406,275 @@ h1 {
 </div>
 
 
+
 <script>
 
-/* =========================
-   START
-========================= */
 
-const startPage = document.getElementById("startPage");
-const icePage = document.getElementById("icePage");
-const finalPage = document.getElementById("finalPage");
+/* =========================================================
+   STARTSEITE
+========================================================= */
 
-const yesButton = document.getElementById("yesButton");
-const noButton = document.getElementById("noButton");
+const startPage =
+    document.getElementById("startPage");
+
+const icePage =
+    document.getElementById("icePage");
+
+const finalPage =
+    document.getElementById("finalPage");
+
+const yesButton =
+    document.getElementById("yesButton");
+
+const noButton =
+    document.getElementById("noButton");
+
 
 yesButton.addEventListener("click", () => {
 
     startPage.style.display = "none";
+
     icePage.style.display = "block";
 
 });
 
+
 noButton.addEventListener("mouseenter", () => {
 
-    const maxX = window.innerWidth - noButton.offsetWidth - 30;
-    const maxY = window.innerHeight - noButton.offsetHeight - 30;
+    const maxX =
+        window.innerWidth -
+        noButton.offsetWidth -
+        30;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const maxY =
+        window.innerHeight -
+        noButton.offsetHeight -
+        30;
+
+    const x =
+        Math.random() * maxX;
+
+    const y =
+        Math.random() * maxY;
 
     noButton.style.position = "fixed";
-    noButton.style.left = x + "px";
-    noButton.style.top = y + "px";
+
+    noButton.style.left =
+        x + "px";
+
+    noButton.style.top =
+        y + "px";
 
 });
 
 
-/* =========================
-   EIS
-========================= */
 
-const flavors = document.querySelectorAll(".flavor");
-const scoopsContainer = document.getElementById("scoops");
+/* =========================================================
+   EISSORTEN
+========================================================= */
 
-let scoopCount = 0;
+const flavors =
+    document.querySelectorAll(".flavor");
+
+const flavorBalls =
+    document.querySelectorAll(".flavor-ball");
+
+
+/*
+   Sicherheitshalber setzen wir die Farben
+   der kleinen Kugeln noch einmal automatisch.
+*/
 
 flavors.forEach(flavor => {
 
+    const color =
+        flavor.dataset.color;
+
+    const ball =
+        flavor.querySelector(".flavor-ball");
+
+    ball.style.background =
+        color;
+
+
+    /*
+       Klick auf eine Eissorte
+    */
+
     flavor.addEventListener("click", () => {
 
-        if (scoopCount >= 5) {
-            return;
-        }
-
-        const scoop = document.createElement("div");
-
-        scoop.className = "scoop";
-
-        scoop.style.background = flavor.dataset.color;
-
-        /*
-           Kleine natürliche Unterschiede,
-           damit die Kugeln nicht komplett identisch aussehen.
-        */
-
-        const rotation = Math.random() * 8 - 4;
-
-        scoop.style.transform = `rotate(${rotation}deg)`;
-
-        scoopsContainer.appendChild(scoop);
-
-        scoopCount++;
-
-        updatePayButton();
+        addScoop(color);
 
     });
 
 });
 
 
-/* =========================
-   TOPPINGS
-========================= */
 
-const creamButton = document.getElementById("creamButton");
-const chocolateButton = document.getElementById("chocolateButton");
-const sprinklesButton = document.getElementById("sprinklesButton");
+/* =========================================================
+   EISKUGELN
+========================================================= */
 
-const creamContainer = document.getElementById("creamContainer");
-const sauceContainer = document.getElementById("sauceContainer");
-const sprinklesContainer = document.getElementById("sprinklesContainer");
+const scoopsContainer =
+    document.getElementById("scoops");
+
+const iceCreation =
+    document.getElementById("iceCreation");
+
+let scoopCount = 0;
+
+
+function addScoop(color) {
+
+    /*
+       maximal 5 Kugeln
+    */
+
+    if (scoopCount >= 5) {
+        return;
+    }
+
+
+    const scoop =
+        document.createElement("div");
+
+    scoop.className =
+        "scoop";
+
+
+    /*
+       Farbe der gewählten Eissorte
+    */
+
+    scoop.style.background =
+        color;
+
+
+    /*
+       Kleine zufällige Drehung,
+       damit es nicht komplett künstlich aussieht.
+    */
+
+    const rotation =
+        Math.random() * 8 - 4;
+
+    scoop.style.transform =
+        `rotate(${rotation}deg)`;
+
+
+    scoopsContainer.appendChild(
+        scoop
+    );
+
+
+    scoopCount++;
+
+
+    /*
+       Jetzt wird geprüft,
+       wie hoch das Eis ist.
+    */
+
+    updateIcePosition();
+
+
+    updatePayButton();
+
+}
+
+
+
+/* =========================================================
+   AUTOMATISCHE TOPPING-POSITION
+========================================================= */
+
+function updateIcePosition() {
+
+
+    /*
+       Alte Klassen entfernen
+    */
+
+    iceCreation.classList.remove(
+        "scoops-1",
+        "scoops-2",
+        "scoops-3",
+        "scoops-4",
+        "scoops-5"
+    );
+
+
+    /*
+       Neue Klasse passend zur
+       Kugelanzahl hinzufügen.
+    */
+
+    if (scoopCount > 0) {
+
+        iceCreation.classList.add(
+            `scoops-${scoopCount}`
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SAHNE
+========================================================= */
+
+const creamButton =
+    document.getElementById("creamButton");
+
+const creamContainer =
+    document.getElementById("creamContainer");
 
 let creamActive = false;
-let chocolateActive = false;
-let sprinklesActive = false;
 
-
-/* SAHNE */
 
 creamButton.addEventListener("click", () => {
 
-    creamActive = !creamActive;
 
-    creamButton.classList.toggle("active", creamActive);
+    /*
+       Ohne Eis keine Sahne.
+    */
+
+    if (scoopCount === 0) {
+        return;
+    }
+
+
+    creamActive =
+        !creamActive;
+
+
+    creamButton.classList.toggle(
+        "active",
+        creamActive
+    );
+
 
     if (creamActive) {
 
+
         creamContainer.innerHTML = `
+
             <div class="whipped-cream">
 
                 <div class="cream-blob"></div>
+
                 <div class="cream-blob"></div>
+
                 <div class="cream-blob"></div>
+
                 <div class="cream-blob"></div>
+
                 <div class="cream-blob"></div>
 
             </div>
+
         `;
 
     } else {
@@ -999,27 +1686,57 @@ creamButton.addEventListener("click", () => {
 });
 
 
-/* SCHOKOSOßE */
+
+/* =========================================================
+   SCHOKOSOSSE
+========================================================= */
+
+const chocolateButton =
+    document.getElementById("chocolateButton");
+
+const sauceContainer =
+    document.getElementById("sauceContainer");
+
+let chocolateActive = false;
+
 
 chocolateButton.addEventListener("click", () => {
 
-    chocolateActive = !chocolateActive;
 
-    chocolateButton.classList.toggle("active", chocolateActive);
+    if (scoopCount === 0) {
+        return;
+    }
+
+
+    chocolateActive =
+        !chocolateActive;
+
+
+    chocolateButton.classList.toggle(
+        "active",
+        chocolateActive
+    );
+
 
     if (chocolateActive) {
 
+
         sauceContainer.innerHTML = `
+
             <div class="chocolate-sauce">
 
                 <div class="sauce-top"></div>
 
                 <div class="drip"></div>
+
                 <div class="drip"></div>
+
                 <div class="drip"></div>
+
                 <div class="drip"></div>
 
             </div>
+
         `;
 
     } else {
@@ -1031,31 +1748,71 @@ chocolateButton.addEventListener("click", () => {
 });
 
 
-/* STREUSEL */
+
+/* =========================================================
+   STREUSEL
+========================================================= */
+
+const sprinklesButton =
+    document.getElementById("sprinklesButton");
+
+const sprinklesContainer =
+    document.getElementById("sprinklesContainer");
+
+let sprinklesActive = false;
+
 
 sprinklesButton.addEventListener("click", () => {
 
-    sprinklesActive = !sprinklesActive;
 
-    sprinklesButton.classList.toggle("active", sprinklesActive);
+    if (scoopCount === 0) {
+        return;
+    }
+
+
+    sprinklesActive =
+        !sprinklesActive;
+
+
+    sprinklesButton.classList.toggle(
+        "active",
+        sprinklesActive
+    );
+
 
     if (sprinklesActive) {
 
+
         sprinklesContainer.innerHTML = `
+
             <div class="sprinkles">
 
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
+
+                <div class="sprinkle"></div>
+
+                <div class="sprinkle"></div>
+
                 <div class="sprinkle"></div>
 
             </div>
+
         `;
 
     } else {
@@ -1067,44 +1824,68 @@ sprinklesButton.addEventListener("click", () => {
 });
 
 
-/* =========================
-   BEZAHLEN
-========================= */
 
-const payButton = document.getElementById("payButton");
-const paymentOverlay = document.getElementById("paymentOverlay");
+/* =========================================================
+   BEZAHLEN
+========================================================= */
+
+const payButton =
+    document.getElementById("payButton");
+
+const paymentOverlay =
+    document.getElementById("paymentOverlay");
+
 
 function updatePayButton() {
 
     if (scoopCount > 0) {
 
-        payButton.classList.add("enabled");
+        payButton.classList.add(
+            "enabled"
+        );
 
     } else {
 
-        payButton.classList.remove("enabled");
+        payButton.classList.remove(
+            "enabled"
+        );
 
     }
 
 }
 
+
 payButton.addEventListener("click", () => {
+
 
     if (scoopCount === 0) {
         return;
     }
 
-    paymentOverlay.style.display = "flex";
+
+    paymentOverlay.style.display =
+        "flex";
+
 
     setTimeout(() => {
 
-        paymentOverlay.style.display = "none";
-        icePage.style.display = "none";
-        finalPage.style.display = "flex";
+
+        paymentOverlay.style.display =
+            "none";
+
+
+        icePage.style.display =
+            "none";
+
+
+        finalPage.style.display =
+            "flex";
+
 
     }, 2200);
 
 });
+
 
 </script>
 
