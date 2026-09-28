@@ -3,2092 +3,1108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Eine wichtige Frage 🍦</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
 <style>
-
-/* =========================================================
-   GRUNDLAGEN
-========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap');
 
 * {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
-  overflow-x: hidden;
-  user-select: none;
-  -webkit-user-select: none;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 
-
-/* =========================================================
+/* =========================
    STARTSEITE
-========================================================= */
+========================= */
 
-.question-page {
+.start-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 
-  min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.35) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+        #f6b6c9;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-  overflow: hidden;
-
-  background-color: #f6b5c9;
-
-  background-image:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(255,255,255,.28) 0 3px,
-      transparent 4px
-    ),
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(255,255,255,.22) 0 4px,
-      transparent 5px
-    ),
-    radial-gradient(
-      circle at 30% 80%,
-      rgba(255,255,255,.20) 0 3px,
-      transparent 4px
-    ),
-    radial-gradient(
-      circle at 70% 75%,
-      rgba(255,255,255,.22) 0 5px,
-      transparent 6px
-    );
+    background-size: 80px 80px, 100px 100px;
 }
 
-.question-page::before {
-
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,.05) 0px,
-      rgba(255,255,255,.05) 2px,
-      transparent 2px,
-      transparent 14px
-    );
-
-  pointer-events: none;
+.start-card {
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(8px);
+    padding: 50px 55px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(100,30,50,.15);
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    z-index: 10;
 }
 
-
-/* =========================================================
-   HERZEN
-========================================================= */
-
-.heart {
-
-  position: absolute;
-
-  color: rgba(255,255,255,.43);
-
-  font-size: 34px;
-
-  pointer-events: none;
-
-  animation: heartWobble 4s ease-in-out infinite;
-}
-
-.heart:nth-child(1) {
-  left: 8%;
-  top: 15%;
-}
-
-.heart:nth-child(2) {
-  left: 22%;
-  bottom: 15%;
-  font-size: 25px;
-  animation-delay: .7s;
-}
-
-.heart:nth-child(3) {
-  right: 12%;
-  top: 13%;
-  font-size: 42px;
-  animation-delay: 1.3s;
-}
-
-.heart:nth-child(4) {
-  right: 23%;
-  bottom: 16%;
-  font-size: 27px;
-  animation-delay: 2s;
-}
-
-.heart:nth-child(5) {
-  left: 48%;
-  top: 8%;
-  font-size: 22px;
-  animation-delay: 2.7s;
-}
-
-.heart:nth-child(6) {
-  right: 5%;
-  bottom: 35%;
-  font-size: 30px;
-  animation-delay: 1.8s;
-}
-
-@keyframes heartWobble {
-
-  0%, 100% {
-    transform: rotate(-10deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(10deg) translateY(-12px);
-  }
-
-}
-
-
-/* =========================================================
-   FRAGE-KARTE
-========================================================= */
-
-.card {
-
-  position: relative;
-  z-index: 10;
-
-  width: min(680px, 90%);
-
-  padding: 55px 40px;
-
-  background: rgba(255,255,255,.90);
-
-  border-radius: 30px;
-
-  text-align: center;
-
-  box-shadow:
-    0 25px 60px rgba(100,25,50,.18);
-
-  backdrop-filter: blur(8px);
-}
-
-.card h1 {
-
-  margin: 0 auto 15px;
-
-  max-width: 600px;
-
-  font-family: "Playfair Display", serif;
-
-  font-size: clamp(30px,5vw,48px);
-
-  line-height: 1.15;
-
-  color: #7f1734;
+h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 43px;
+    line-height: 1.15;
+    color: #741f32;
+    margin: 0 0 12px;
 }
 
 .subtitle {
-
-  margin-bottom: 35px;
-
-  font-size: 17px;
-
-  color: #7d5260;
+    font-size: 17px;
+    color: #733847;
+    margin-bottom: 30px;
 }
 
 .buttons {
-
-  display: flex;
-
-  justify-content: center;
-
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.answer-button {
-
-  border: none;
-
-  padding: 14px 35px;
-
-  border-radius: 999px;
-
-  font-family: "DM Sans", sans-serif;
-
-  font-size: 18px;
-
-  font-weight: 700;
-
-  color: white;
-
-  background: #8f1738;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 20px rgba(100,15,40,.20);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+.main-button {
+    border: none;
+    background: #791f32;
+    color: white;
+    padding: 13px 35px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s;
 }
 
-.answer-button:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 25px rgba(100,15,40,.25);
+.main-button:hover {
+    transform: scale(1.06);
 }
 
+#noButton {
+    position: relative;
+}
 
-/* =========================================================
-   EIS-SEITE
-========================================================= */
+/* Herzen */
+
+.heart {
+    position: absolute;
+    color: rgba(130,30,55,.28);
+    font-size: 28px;
+    animation: wobble 3s ease-in-out infinite;
+}
+
+@keyframes wobble {
+    0%,100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+    50% {
+        transform: rotate(8deg) translateY(-12px);
+    }
+}
+
+/* =========================
+   EISSEITE
+========================= */
 
 .ice-page {
-
-  display: none;
-
-  min-height: 100vh;
-
-  padding: 35px 25px 60px;
-
-  background:
-
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(255,255,255,.45),
-      transparent 25%
-    ),
-
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(255,255,255,.35),
-      transparent 25%
-    ),
-
-    #ffd7e2;
-
-  color: #5f1730;
+    display: none;
+    min-height: 100vh;
+    padding: 35px 20px 50px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.3) 0 3px, transparent 4px),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,.25) 0 3px, transparent 4px),
+        #f8c3d4;
+    background-size: 80px 80px, 110px 110px;
 }
 
-.ice-page.active {
-  display: block;
+.shop-title {
+    text-align: center;
+    font-family: 'Baloo 2', cursive;
+    color: #741f32;
+    font-size: 42px;
+    margin: 0;
 }
 
-.ice-title {
-
-  text-align: center;
-
-  margin: 10px 0 8px;
-
-  font-family: "Playfair Display", serif;
-
-  font-size: clamp(34px,6vw,52px);
-
-  color: #7f1734;
+.shop-subtitle {
+    text-align: center;
+    color: #733847;
+    margin: 0 0 30px;
 }
 
-.ice-subtitle {
-
-  text-align: center;
-
-  margin-bottom: 35px;
-
-  color: #875363;
+.shop {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 35px;
 }
 
+/* =========================
+   EISSORTEN
+========================= */
 
-/* =========================================================
-   EISLADEN
-========================================================= */
-
-.ice-shop {
-
-  width: min(1150px,100%);
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns:
-    180px
-    1fr
-    330px;
-
-  gap: 25px;
-
-  align-items: start;
+.flavor-box {
+    background: rgba(255,255,255,.82);
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(100,30,50,.12);
 }
 
-
-/* =========================================================
-   WAFFELAUSWAHL
-========================================================= */
-
-.cones-area {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 13px;
-}
-
-.cones-title {
-
-  font-weight: 700;
-
-  margin-bottom: 3px;
-}
-
-.cone {
-
-  position: relative;
-
-  width: 120px;
-  height: 145px;
-
-  cursor: pointer;
-
-  border-radius: 18px;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-.cone:hover {
-
-  transform: scale(1.06);
-
-  background:
-    rgba(255,255,255,.3);
-}
-
-.cone.selected {
-
-  background:
-    rgba(255,255,255,.55);
-
-  transform: scale(1.07);
-
-  box-shadow:
-    0 8px 20px rgba(100,30,50,.12);
-}
-
-.cone-waffle {
-
-  position: absolute;
-
-  left: 20px;
-  top: 45px;
-
-  width: 80px;
-  height: 100px;
-
-  background:
-
-    linear-gradient(
-      45deg,
-      transparent 45%,
-      rgba(120,70,25,.28) 46%,
-      rgba(120,70,25,.28) 50%,
-      transparent 51%
-    ),
-
-    linear-gradient(
-      -45deg,
-      transparent 45%,
-      rgba(120,70,25,.28) 46%,
-      rgba(120,70,25,.28) 50%,
-      transparent 51%
-    ),
-
-    #e8ad63;
-
-  background-size: 16px 16px;
-
-  clip-path:
-    polygon(
-      10% 0,
-      90% 0,
-      50% 100%
-    );
-
-  box-shadow:
-    inset 0 0 15px rgba(100,50,10,.15);
-}
-
-
-/* =========================================================
-   EISCOUNTER
-========================================================= */
-
-.counter {
-
-  padding: 25px;
-
-  background:
-    rgba(255,255,255,.82);
-
-  border-radius: 25px;
-
-  box-shadow:
-    0 15px 35px rgba(90,30,50,.12);
-}
-
-.counter-title {
-
-  text-align: center;
-
-  margin-bottom: 20px;
-
-  font-size: 21px;
-
-  font-weight: 700;
-}
-
-.counter-hint {
-
-  text-align: center;
-
-  margin-bottom: 20px;
-
-  color: #875363;
-
-  font-size: 14px;
+.flavor-box h2,
+.build-box h2 {
+    color: #741f32;
+    font-family: 'Baloo 2', cursive;
+    margin-top: 0;
 }
 
 .flavors {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
 }
 
 .flavor {
-
-  height: 82px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: flex-end;
-
-  padding-bottom: 10px;
-
-  border-radius: 16px;
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  box-shadow:
-    inset 0 -12px 15px rgba(0,0,0,.08);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    border: none;
+    border-radius: 18px;
+    background: #fff;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0,0,0,.08);
+    transition: transform .15s;
 }
 
 .flavor:hover {
-
-  transform: translateY(-4px);
-
-  box-shadow:
-    inset 0 -12px 15px rgba(0,0,0,.08),
-    0 7px 15px rgba(70,30,40,.12);
+    transform: translateY(-4px);
 }
 
-.flavor:active {
-
-  transform: scale(.95);
+.flavor-ball {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow:
+        inset -7px -7px 10px rgba(0,0,0,.08),
+        inset 6px 5px 8px rgba(255,255,255,.3),
+        0 4px 7px rgba(0,0,0,.12);
 }
 
 .flavor-name {
-
-  padding: 4px 9px;
-
-  background:
-    rgba(255,255,255,.84);
-
-  border-radius: 999px;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  color: #632036;
+    margin-top: 7px;
+    font-weight: 700;
+    color: #633340;
 }
 
+/* =========================
+   EIS-ZUSAMMENBAU
+========================= */
 
-/* Eissorten */
-
-.erdbeer {
-  background: #f47791;
+.build-box {
+    background: rgba(255,255,255,.82);
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(100,30,50,.12);
+    text-align: center;
 }
 
-.vanille {
-  background: #fff1bd;
+.ice-area {
+    height: 510px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
 }
 
-.schoko {
-  background: #75452f;
+/*
+   DER KOMPLETTE EISAUFBAU
+   Alles befindet sich innerhalb derselben
+   "cone-wrapper"-Fläche.
+*/
+
+.ice-creation {
+    width: 250px;
+    height: 450px;
+    position: relative;
 }
 
-.bueno {
-  background: #c99158;
+/* Waffel */
+
+.cone {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 245px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(120,75,30,.28) 0px,
+            rgba(120,75,30,.28) 2px,
+            transparent 2px,
+            transparent 18px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(120,75,30,.25) 0px,
+            rgba(120,75,30,.25) 2px,
+            transparent 2px,
+            transparent 18px
+        ),
+        linear-gradient(#e8ae58,#d9973d);
+
+    clip-path: polygon(7% 0, 93% 0, 50% 100%);
+    box-shadow: inset 0 0 15px rgba(100,50,10,.18);
 }
 
-.oreo {
-  background: #55535b;
+/* obere Waffelkante */
+
+.cone-top {
+    position: absolute;
+    bottom: 218px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 154px;
+    height: 27px;
+    border-radius: 50%;
+    background: #eab25d;
+    z-index: 4;
 }
 
-.nutella {
-  background: #9d6547;
+/* Kugeln */
+
+.scoops {
+    position: absolute;
+    bottom: 215px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px;
+    height: 190px;
+    z-index: 6;
 }
 
-.brownie {
-  background: #5a3023;
-}
-
-.haselnuss {
-  background: #c99565;
-}
-
-
-/* =========================================================
-   RECHTE SEITE
-========================================================= */
-
-.right-side {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 20px;
-}
-
-
-/* =========================================================
-   WAFFEL-ZIEL
-========================================================= */
-
-.waffel-target {
-
-  min-height: 390px;
-
-  padding: 25px;
-
-  border:
-    3px dashed rgba(127,23,52,.35);
-
-  border-radius: 25px;
-
-  background:
-    rgba(255,255,255,.28);
-
-  text-align: center;
-
-  transition:
-    background .2s ease;
-}
-
-.target-title {
-
-  font-weight: 700;
-
-  color: #7f1734;
-
-  margin-bottom: 5px;
-}
-
-.target-hint {
-
-  font-size: 13px;
-
-  color: #875363;
-
-  margin-bottom: 15px;
-}
-
-.selected-cone {
-
-  position: relative;
-
-  width: 150px;
-
-  height: 280px;
-
-  margin: auto;
-}
-
-.selected-cone .cone-waffle {
-
-  left: 35px;
-
-  top: 100px;
-
-  width: 80px;
-
-  height: 125px;
-}
-
-
-/* =========================================================
-   KUGELN AUF DER WAFFEL
-========================================================= */
-
-.target-scoops {
-
-  position: absolute;
-
-  top: 30px;
-
-  left: 10px;
-
-  width: 130px;
-
-  height: 150px;
-
-  z-index: 5;
-}
+/* jede Kugel wird automatisch schön gestapelt */
 
 .scoop {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
 
-  position: absolute;
+    box-shadow:
+        inset -12px -12px 18px rgba(0,0,0,.10),
+        inset 10px 8px 14px rgba(255,255,255,.25),
+        0 5px 8px rgba(80,30,30,.18);
 
-  width: 58px;
-
-  height: 58px;
-
-  border-radius: 50%;
-
-  box-shadow:
-    inset -5px -7px 8px rgba(0,0,0,.12),
-    0 4px 7px rgba(0,0,0,.15);
-
-  transition:
-    transform .2s ease;
+    transition: all .3s ease;
 }
 
-
-/* Positionen für bis zu 5 Kugeln */
+/* Positionen der 5 möglichen Kugeln */
 
 .scoop:nth-child(1) {
-
-  left: 36px;
-
-  top: 80px;
+    left: 52px;
+    bottom: 0;
 }
 
 .scoop:nth-child(2) {
-
-  left: 8px;
-
-  top: 50px;
+    left: 5px;
+    bottom: 48px;
 }
 
 .scoop:nth-child(3) {
-
-  left: 64px;
-
-  top: 50px;
+    left: 100px;
+    bottom: 48px;
 }
 
 .scoop:nth-child(4) {
-
-  left: 25px;
-
-  top: 22px;
+    left: 28px;
+    bottom: 95px;
 }
 
 .scoop:nth-child(5) {
-
-  left: 55px;
-
-  top: 22px;
+    left: 78px;
+    bottom: 95px;
 }
 
-
-/* =========================================================
+/* =========================
    TOPPINGS
-========================================================= */
+========================= */
+
+/* Sahne */
+
+.whipped-cream {
+    position: absolute;
+    left: 50%;
+    bottom: 165px;
+    transform: translateX(-50%);
+    width: 95px;
+    height: 105px;
+    z-index: 12;
+    pointer-events: none;
+}
+
+.cream-blob {
+    position: absolute;
+    background: #fffaf5;
+    border-radius: 50%;
+    box-shadow:
+        inset -5px -5px 8px rgba(180,150,140,.12),
+        0 3px 5px rgba(80,40,40,.12);
+}
+
+.cream-blob:nth-child(1) {
+    width: 58px;
+    height: 58px;
+    left: 18px;
+    bottom: 0;
+}
+
+.cream-blob:nth-child(2) {
+    width: 55px;
+    height: 55px;
+    left: 2px;
+    bottom: 28px;
+}
+
+.cream-blob:nth-child(3) {
+    width: 55px;
+    height: 55px;
+    right: 2px;
+    bottom: 28px;
+}
+
+.cream-blob:nth-child(4) {
+    width: 48px;
+    height: 48px;
+    left: 24px;
+    bottom: 55px;
+}
+
+.cream-blob:nth-child(5) {
+    width: 36px;
+    height: 36px;
+    left: 31px;
+    bottom: 73px;
+}
+
+/* Schokosoße */
+
+.chocolate-sauce {
+    position: absolute;
+    bottom: 205px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 125px;
+    height: 90px;
+    z-index: 13;
+    pointer-events: none;
+}
+
+.chocolate-sauce .sauce-top {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 115px;
+    height: 35px;
+    background: #542313;
+    border-radius: 50%;
+    box-shadow: inset 0 4px 4px rgba(255,255,255,.08);
+}
+
+.drip {
+    position: absolute;
+    background: #542313;
+    width: 18px;
+    border-radius: 0 0 15px 15px;
+    top: 32px;
+}
+
+.drip:nth-child(2) {
+    left: 17px;
+    height: 30px;
+}
+
+.drip:nth-child(3) {
+    left: 45px;
+    height: 47px;
+}
+
+.drip:nth-child(4) {
+    left: 78px;
+    height: 25px;
+}
+
+.drip:nth-child(5) {
+    right: 8px;
+    height: 38px;
+}
+
+/* Streusel */
+
+.sprinkles {
+    position: absolute;
+    left: 50%;
+    bottom: 218px;
+    transform: translateX(-50%);
+    width: 145px;
+    height: 90px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.sprinkle {
+    position: absolute;
+    width: 7px;
+    height: 20px;
+    border-radius: 4px;
+    transform: rotate(30deg);
+    background: #d44b62;
+}
+
+.sprinkle:nth-child(2) {
+    left: 20px;
+    top: 22px;
+    transform: rotate(-25deg);
+    background: #4c7dce;
+}
+
+.sprinkle:nth-child(3) {
+    left: 43px;
+    top: 8px;
+    transform: rotate(55deg);
+    background: #e5a72e;
+}
+
+.sprinkle:nth-child(4) {
+    left: 70px;
+    top: 27px;
+    transform: rotate(-45deg);
+    background: #5ca85c;
+}
+
+.sprinkle:nth-child(5) {
+    left: 95px;
+    top: 10px;
+    transform: rotate(20deg);
+    background: #d44b62;
+}
+
+.sprinkle:nth-child(6) {
+    left: 120px;
+    top: 30px;
+    transform: rotate(-30deg);
+    background: #e5a72e;
+}
+
+.sprinkle:nth-child(7) {
+    left: 35px;
+    top: 48px;
+    transform: rotate(65deg);
+    background: #9b62c8;
+}
+
+.sprinkle:nth-child(8) {
+    left: 62px;
+    top: 54px;
+    transform: rotate(-15deg);
+    background: #4c7dce;
+}
+
+.sprinkle:nth-child(9) {
+    left: 90px;
+    top: 50px;
+    transform: rotate(40deg);
+    background: #e56b35;
+}
+
+.sprinkle:nth-child(10) {
+    left: 110px;
+    top: 55px;
+    transform: rotate(-50deg);
+    background: #5ca85c;
+}
+
+/* =========================
+   TOPPING BUTTONS
+========================= */
 
 .toppings {
-
-  padding: 20px;
-
-  background:
-    rgba(255,255,255,.82);
-
-  border-radius: 22px;
-
-  box-shadow:
-    0 12px 25px rgba(90,30,50,.10);
-}
-
-.toppings-title {
-
-  text-align: center;
-
-  font-weight: 700;
-
-  margin-bottom: 13px;
-}
-
-.topping-buttons {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 .topping-button {
-
-  border: none;
-
-  padding: 11px 5px;
-
-  border-radius: 13px;
-
-  background: #f3dce3;
-
-  color: #702039;
-
-  font-family:
-    "DM Sans",sans-serif;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
+    border: 2px solid #b85a70;
+    background: white;
+    color: #743143;
+    padding: 10px 15px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .topping-button:hover {
-
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .topping-button.active {
-
-  background: #8f1738;
-
-  color: white;
+    background: #791f32;
+    color: white;
 }
 
-
-/* =========================================================
-   TOPPING-EFFEKTE
-========================================================= */
-
-.whipped-cream {
-
-  position: absolute;
-
-  left: 28px;
-
-  top: -2px;
-
-  width: 75px;
-
-  height: 50px;
-
-  z-index: 20;
-
-  pointer-events: none;
-}
-
-.whipped-cream::before {
-
-  content: "☁";
-
-  font-size: 65px;
-
-  color: white;
-
-  text-shadow:
-    0 3px 5px rgba(0,0,0,.12);
-}
-
-.chocolate-sauce {
-
-  position: absolute;
-
-  left: 23px;
-
-  top: 35px;
-
-  width: 85px;
-
-  height: 20px;
-
-  z-index: 25;
-
-  pointer-events: none;
-
-  border-radius: 50%;
-
-  background: #4a2419;
-
-  box-shadow:
-    0 3px 5px rgba(0,0,0,.12);
-}
-
-.sprinkles {
-
-  position: absolute;
-
-  left: 15px;
-
-  top: 20px;
-
-  width: 105px;
-
-  height: 80px;
-
-  z-index: 30;
-
-  pointer-events: none;
-
-  font-size: 25px;
-
-  line-height: 1.3;
-
-  transform: rotate(-4deg);
-}
-
-
-/* =========================================================
-   BEZAHLEN
-========================================================= */
+/* bezahlen */
 
 .pay-button {
-
-  width: 100%;
-
-  border: none;
-
-  padding: 16px;
-
-  border-radius: 999px;
-
-  background: #8f1738;
-
-  color: white;
-
-  font-family:
-    "DM Sans",sans-serif;
-
-  font-size: 18px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 20px rgba(100,15,40,.2);
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
+    margin-top: 20px;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 999px;
+    background: #791f32;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: .4;
 }
 
-.pay-button:hover {
-
-  transform: translateY(-3px);
-
-  background: #75132e;
+.pay-button.enabled {
+    opacity: 1;
 }
 
-.pay-button:disabled {
-
-  opacity: .45;
-
-  cursor: not-allowed;
-
-  transform: none;
+.pay-button.enabled:hover {
+    transform: scale(1.04);
 }
 
-
-/* =========================================================
-   BEZAHL-OVERLAY
-========================================================= */
+/* =========================
+   PAYMENT
+========================= */
 
 .payment-overlay {
-
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 1000;
-
-  display: none;
-
-  justify-content: center;
-
-  align-items: center;
-
-  background:
-    rgba(70,20,40,.45);
-
-  backdrop-filter:
-    blur(7px);
+    position: fixed;
+    inset: 0;
+    background: rgba(90,20,40,.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
 }
 
-.payment-overlay.show {
-
-  display: flex;
+.payment-card {
+    background: white;
+    padding: 45px;
+    border-radius: 25px;
+    text-align: center;
 }
 
-.payment-box {
-
-  width: min(400px,90%);
-
-  padding: 45px 30px;
-
-  background: white;
-
-  border-radius: 30px;
-
-  text-align: center;
-
-  box-shadow:
-    0 25px 60px rgba(70,20,40,.25);
+.spinner {
+    width: 55px;
+    height: 55px;
+    border: 6px solid #f1ccd6;
+    border-top-color: #791f32;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
 }
 
-.payment-symbol {
-
-  width: 80px;
-
-  height: 80px;
-
-  margin: auto auto 20px;
-
-  border-radius: 50%;
-
-  border:
-    7px solid #f0d8df;
-
-  border-top-color:
-    #8f1738;
-
-  animation:
-    paymentSpin 1s linear infinite;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes paymentSpin {
-
-  to {
-    transform: rotate(360deg);
-  }
-
-}
-
-.payment-box h2 {
-
-  margin: 0 0 8px;
-
-  font-family:
-    "Playfair Display",serif;
-
-  color: #7f1734;
-}
-
-.payment-box p {
-
-  margin: 0;
-
-  color: #875363;
-}
-
-
-/* =========================================================
-   LETZTE SEITE
-========================================================= */
+/* =========================
+   FINAL
+========================= */
 
 .final-page {
-
-  display: none;
-
-  min-height: 100vh;
-
-  justify-content: center;
-
-  align-items: center;
-
-  text-align: center;
-
-  padding: 30px;
-
-  background:
-
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(255,255,255,.5),
-      transparent 25%
-    ),
-
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(255,255,255,.4),
-      transparent 25%
-    ),
-
-    #f6b5c9;
-}
-
-.final-page.active {
-
-  display: flex;
-}
-
-.final-box {
-
-  width: min(650px,90%);
-
-  padding: 60px 35px;
-
-  background:
-    rgba(255,255,255,.9);
-
-  border-radius: 35px;
-
-  box-shadow:
-    0 25px 60px rgba(100,25,50,.18);
-}
-
-.final-emoji {
-
-  font-size: 70px;
-
-  margin-bottom: 15px;
-}
-
-.final-box h1 {
-
-  margin: 0 0 15px;
-
-  font-family:
-    "Playfair Display",serif;
-
-  font-size: clamp(40px,7vw,65px);
-
-  color: #7f1734;
-}
-
-.final-box p {
-
-  margin: 0;
-
-  font-size: 22px;
-
-  color: #7d5260;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .ice-shop {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .cones-area {
-
-    order: 1;
-
-    flex-direction: row;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-  }
-
-  .cones-title {
-
-    width: 100%;
-
-    text-align: center;
-  }
-
-  .counter {
-
-    order: 2;
-  }
-
-  .right-side {
-
-    order: 3;
-  }
-
-}
-
-@media (max-width: 500px) {
-
-  .card {
-
-    padding: 40px 22px;
-  }
-
-  .buttons {
-
-    flex-direction: column;
-
+    display: none;
+    min-height: 100vh;
     align-items: center;
-  }
-
-  .answer-button {
-
-    width: 150px;
-  }
-
-  .flavors {
-
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .topping-buttons {
-
-    grid-template-columns: 1fr;
-  }
-
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.3) 0 3px, transparent 4px),
+        #f6b6c9;
 }
 
+.final-card {
+    background: rgba(255,255,255,.85);
+    padding: 55px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(100,30,50,.15);
+}
+
+.final-card h1 {
+    font-size: 50px;
+}
+
+.final-card p {
+    font-size: 22px;
+    color: #743143;
+}
+
+/* Handy */
+
+@media(max-width: 800px) {
+    .shop {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .shop-title {
+        font-size: 34px;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
+<!-- =========================
+     START
+========================= -->
 
-<!-- =====================================================
-     SEITE 1 – FRAGE
-===================================================== -->
+<div class="start-page" id="startPage">
 
-<section
-  class="question-page"
-  id="questionPage"
->
+    <div class="heart" style="top:10%;left:10%;">♥</div>
+    <div class="heart" style="top:20%;right:12%;animation-delay:.7s;">♥</div>
+    <div class="heart" style="bottom:12%;left:17%;animation-delay:1.2s;">♥</div>
+    <div class="heart" style="bottom:20%;right:18%;animation-delay:1.8s;">♥</div>
+    <div class="heart" style="top:50%;left:4%;animation-delay:.4s;">♥</div>
 
-  <div class="heart">♥</div>
-  <div class="heart">♥</div>
-  <div class="heart">♥</div>
-  <div class="heart">♥</div>
-  <div class="heart">♥</div>
-  <div class="heart">♥</div>
+    <div class="start-card">
+
+        <h1>
+            Liebe Haus Mausi,<br>
+            möchtest du mit mir heute Mittag ein Eis essen gehen?
+        </h1>
+
+        <div class="subtitle">
+            (Probier mal, Nein zu sagen.)
+        </div>
+
+        <div class="buttons">
+            <button class="main-button" id="yesButton">
+                Ja
+            </button>
+
+            <button class="main-button" id="noButton">
+                Nein
+            </button>
+        </div>
+
+    </div>
+</div>
 
 
-  <div class="card">
+<!-- =========================
+     EISLADEN
+========================= -->
 
-    <h1>
-      Liebe Haus Mausi,<br>
-      möchtest du mit mir heute Mittag ein Eis essen gehen?
+<div class="ice-page" id="icePage">
+
+    <h1 class="shop-title">
+        🍦 Deine Eiswaffel 🍦
     </h1>
 
-    <div class="subtitle">
-      (Probier mal, Nein zu sagen.)
-    </div>
-
-
-    <div class="buttons">
-
-      <button
-        class="answer-button"
-        id="yesButton"
-      >
-        Ja
-      </button>
-
-
-      <button
-        class="answer-button"
-        id="noButton"
-      >
-        Nein
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SEITE 2 – EISLADEN
-===================================================== -->
-
-<section
-  class="ice-page"
-  id="icePage"
->
-
-  <h1 class="ice-title">
-    🍦 Willkommen in der Eisdiele
-  </h1>
-
-  <div class="ice-subtitle">
-    Stell dir dein perfektes Eis zusammen.
-  </div>
-
-
-  <div class="ice-shop">
-
-
-    <!-- WAFFELN -->
-
-    <div class="cones-area">
-
-      <div class="cones-title">
-        Wähle deine Waffel
-      </div>
-
-
-      <div
-        class="cone"
-        data-cone="1"
-      >
-        <div class="cone-waffle"></div>
-      </div>
-
-
-      <div
-        class="cone"
-        data-cone="2"
-      >
-        <div class="cone-waffle"></div>
-      </div>
-
-
-      <div
-        class="cone"
-        data-cone="3"
-      >
-        <div class="cone-waffle"></div>
-      </div>
-
-    </div>
-
-
-
-    <!-- EISSORTEN -->
-
-    <div class="counter">
-
-      <div class="counter-title">
-        🍨 Deine Eissorten
-      </div>
-
-      <div class="counter-hint">
-        Einfach anklicken – maximal 5 Kugeln
-      </div>
-
-
-      <div class="flavors">
-
-
-        <div
-          class="flavor erdbeer"
-          data-color="#f47791"
-        >
-          <div class="flavor-name">
-            Erdbeer
-          </div>
-        </div>
-
-
-        <div
-          class="flavor vanille"
-          data-color="#fff1bd"
-        >
-          <div class="flavor-name">
-            Vanille
-          </div>
-        </div>
-
-
-        <div
-          class="flavor schoko"
-          data-color="#75452f"
-        >
-          <div class="flavor-name">
-            Schoko
-          </div>
-        </div>
-
-
-        <div
-          class="flavor bueno"
-          data-color="#c99158"
-        >
-          <div class="flavor-name">
-            Kinder Bueno
-          </div>
-        </div>
-
-
-        <div
-          class="flavor oreo"
-          data-color="#55535b"
-        >
-          <div class="flavor-name">
-            Oreo
-          </div>
-        </div>
-
-
-        <div
-          class="flavor nutella"
-          data-color="#9d6547"
-        >
-          <div class="flavor-name">
-            Nutella
-          </div>
-        </div>
-
-
-        <div
-          class="flavor brownie"
-          data-color="#5a3023"
-        >
-          <div class="flavor-name">
-            Brownie
-          </div>
-        </div>
-
-
-        <div
-          class="flavor haselnuss"
-          data-color="#c99565"
-        >
-          <div class="flavor-name">
-            Haselnuss
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- RECHTE SEITE -->
-
-    <div class="right-side">
-
-
-      <!-- WAFFEL-ZIEL -->
-
-      <div class="waffel-target">
-
-        <div class="target-title">
-          Deine Waffel
-        </div>
-
-        <div class="target-hint">
-          Klicke links eine Waffel an.
-        </div>
-
-
-        <div
-          class="selected-cone"
-          id="selectedCone"
-        >
-
-          <div
-            class="target-scoops"
-            id="targetScoops"
-          ></div>
-
-
-          <div
-            class="cone-waffle"
-          ></div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- TOPPINGS -->
-
-      <div class="toppings">
-
-        <div class="toppings-title">
-          ✨ Noch etwas oben drauf?
-        </div>
-
-
-        <div class="topping-buttons">
-
-
-          <button
-            class="topping-button"
-            id="creamButton"
-          >
-            🍦 Sahne oben drauf
-          </button>
-
-
-          <button
-            class="topping-button"
-            id="chocolateButton"
-          >
-            🍫 Schokosoße oben drauf
-          </button>
-
-
-          <button
-            class="topping-button"
-            id="sprinklesButton"
-          >
-            🌈 Streusel oben drauf
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- BEZAHLEN -->
-
-      <button
-        class="pay-button"
-        id="payButton"
-        disabled
-      >
-        💳 Eis bezahlen
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BEZAHLEN OVERLAY
-===================================================== -->
-
-<div
-  class="payment-overlay"
-  id="paymentOverlay"
->
-
-  <div class="payment-box">
-
-    <div class="payment-symbol"></div>
-
-    <h2>
-      Zahlung wird verarbeitet...
-    </h2>
-
-    <p>
-      Einen kleinen Moment bitte 🍦
+    <p class="shop-subtitle">
+        Stell dir dein Eis zusammen!
     </p>
 
-  </div>
+    <div class="shop">
+
+        <!-- SORTEN -->
+
+        <div class="flavor-box">
+
+            <h2>🍨 Eissorten</h2>
+
+            <div class="flavors">
+
+                <button class="flavor" data-color="#ed8e9e">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Erdbeer</div>
+                </button>
+
+                <button class="flavor" data-color="#fff1c9">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Vanille</div>
+                </button>
+
+                <button class="flavor" data-color="#70452e">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Schoko</div>
+                </button>
+
+                <button class="flavor" data-color="#c89a72">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Kinder Bueno</div>
+                </button>
+
+                <button class="flavor" data-color="#e4dfd5">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Oreo</div>
+                </button>
+
+                <button class="flavor" data-color="#704128">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Nutella</div>
+                </button>
+
+                <button class="flavor" data-color="#8b5137">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Brownie</div>
+                </button>
+
+                <button class="flavor" data-color="#b88958">
+                    <div class="flavor-ball"></div>
+                    <div class="flavor-name">Haselnuss</div>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- EIS -->
+
+        <div class="build-box">
+
+            <h2>🍦 Dein Eis</h2>
+
+            <div class="ice-area">
+
+                <div class="ice-creation">
+
+                    <!-- Kugeln -->
+                    <div class="scoops" id="scoops"></div>
+
+                    <!-- Toppings -->
+                    <div id="creamContainer"></div>
+                    <div id="sauceContainer"></div>
+                    <div id="sprinklesContainer"></div>
+
+                    <!-- Waffel -->
+                    <div class="cone-top"></div>
+                    <div class="cone"></div>
+
+                </div>
+
+            </div>
+
+            <div class="toppings">
+
+                <button class="topping-button" id="creamButton">
+                    🍦 Sahne oben drauf
+                </button>
+
+                <button class="topping-button" id="chocolateButton">
+                    🍫 Schokosoße oben drauf
+                </button>
+
+                <button class="topping-button" id="sprinklesButton">
+                    🌈 Streusel oben drauf
+                </button>
+
+            </div>
+
+            <button class="pay-button" id="payButton">
+                💳 Eis bezahlen
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
+<div class="payment-overlay" id="paymentOverlay">
+
+    <div class="payment-card">
+
+        <div class="spinner"></div>
+
+        <h2>Eis wird bezahlt...</h2>
+
+        <p>🍦 Einen kleinen Moment...</p>
+
+    </div>
 
 </div>
 
 
+<!-- =========================
+     FINAL
+========================= -->
 
-<!-- =====================================================
-     LETZTE SEITE
-===================================================== -->
+<div class="final-page" id="finalPage">
 
-<section
-  class="final-page"
-  id="finalPage"
->
+    <div class="final-card">
 
-  <div class="final-box">
+        <h1>Gute Wahl. ❤️</h1>
 
-    <div class="final-emoji">
-      🍦💕
+        <p>
+            Finja freut sich.
+        </p>
+
     </div>
 
-    <h1>
-      Gute Wahl.
-    </h1>
-
-    <p>
-      Finja freut sich. ❤️
-    </p>
-
-  </div>
-
-</section>
-
+</div>
 
 
 <script>
 
-/* =========================================================
-   ELEMENTE
-========================================================= */
+/* =========================
+   START
+========================= */
 
-const questionPage =
-  document.getElementById("questionPage");
+const startPage = document.getElementById("startPage");
+const icePage = document.getElementById("icePage");
+const finalPage = document.getElementById("finalPage");
 
-const icePage =
-  document.getElementById("icePage");
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
 
-const finalPage =
-  document.getElementById("finalPage");
+yesButton.addEventListener("click", () => {
 
-const yesButton =
-  document.getElementById("yesButton");
+    startPage.style.display = "none";
+    icePage.style.display = "block";
 
-const noButton =
-  document.getElementById("noButton");
+});
 
-const cones =
-  document.querySelectorAll(".cone");
+noButton.addEventListener("mouseenter", () => {
 
-const flavors =
-  document.querySelectorAll(".flavor");
+    const maxX = window.innerWidth - noButton.offsetWidth - 30;
+    const maxY = window.innerHeight - noButton.offsetHeight - 30;
 
-const targetScoops =
-  document.getElementById("targetScoops");
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-const selectedCone =
-  document.getElementById("selectedCone");
+    noButton.style.position = "fixed";
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
 
-const creamButton =
-  document.getElementById("creamButton");
-
-const chocolateButton =
-  document.getElementById("chocolateButton");
-
-const sprinklesButton =
-  document.getElementById("sprinklesButton");
-
-const payButton =
-  document.getElementById("payButton");
-
-const paymentOverlay =
-  document.getElementById("paymentOverlay");
+});
 
 
-/* =========================================================
-   NEIN-BUTTON
-========================================================= */
+/* =========================
+   EIS
+========================= */
 
-function moveNoButton() {
-
-  const maxX =
-    window.innerWidth -
-    noButton.offsetWidth -
-    20;
-
-  const maxY =
-    window.innerHeight -
-    noButton.offsetHeight -
-    20;
-
-
-  const x =
-    Math.max(
-      10,
-      Math.random() * maxX
-    );
-
-  const y =
-    Math.max(
-      10,
-      Math.random() * maxY
-    );
-
-
-  noButton.style.position =
-    "fixed";
-
-  noButton.style.left =
-    x + "px";
-
-  noButton.style.top =
-    y + "px";
-}
-
-
-noButton.addEventListener(
-  "mouseenter",
-  moveNoButton
-);
-
-
-noButton.addEventListener(
-  "touchstart",
-  function(e) {
-
-    e.preventDefault();
-
-    moveNoButton();
-
-  },
-  { passive: false }
-);
-
-
-/* =========================================================
-   JA → EISLADEN
-========================================================= */
-
-yesButton.addEventListener(
-  "click",
-  function() {
-
-    questionPage.style.display =
-      "none";
-
-    icePage.classList.add(
-      "active"
-    );
-
-    window.scrollTo(
-      0,
-      0
-    );
-
-  }
-);
-
-
-/* =========================================================
-   VARIABLEN
-========================================================= */
-
-let waffleSelected = false;
+const flavors = document.querySelectorAll(".flavor");
+const scoopsContainer = document.getElementById("scoops");
 
 let scoopCount = 0;
 
-let creamAdded = false;
+flavors.forEach(flavor => {
 
-let chocolateAdded = false;
-
-let sprinklesAdded = false;
-
-
-/* =========================================================
-   WAFFEL AUSWÄHLEN
-========================================================= */
-
-cones.forEach(
-  cone => {
-
-    cone.addEventListener(
-      "click",
-      function() {
-
-        cones.forEach(
-          c =>
-            c.classList.remove(
-              "selected"
-            )
-        );
-
-
-        cone.classList.add(
-          "selected"
-        );
-
-
-        waffleSelected = true;
-
-
-        /*
-          Die Waffel ist jetzt automatisch
-          im richtigen Feld.
-        */
-
-        selectedCone.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-
-
-        updatePayButton();
-
-      }
-    );
-
-  }
-);
-
-
-/* =========================================================
-   EIS KUGEL ANKLICKEN
-========================================================= */
-
-flavors.forEach(
-  flavor => {
-
-    flavor.addEventListener(
-      "click",
-      function() {
-
-        /*
-          Ohne Waffel keine Kugel.
-        */
-
-        if (!waffleSelected) {
-
-          alert(
-            "Such dir zuerst eine Waffel aus! 🍦"
-          );
-
-          return;
-        }
-
-
-        /*
-          Maximal 5 Kugeln.
-        */
+    flavor.addEventListener("click", () => {
 
         if (scoopCount >= 5) {
-
-          return;
-
+            return;
         }
 
+        const scoop = document.createElement("div");
 
-        const scoop =
-          document.createElement("div");
+        scoop.className = "scoop";
 
+        scoop.style.background = flavor.dataset.color;
 
-        scoop.className =
-          "scoop";
+        /*
+           Kleine natürliche Unterschiede,
+           damit die Kugeln nicht komplett identisch aussehen.
+        */
 
+        const rotation = Math.random() * 8 - 4;
 
-        scoop.style.background =
-          flavor.dataset.color;
+        scoop.style.transform = `rotate(${rotation}deg)`;
 
-
-        targetScoops.appendChild(
-          scoop
-        );
-
+        scoopsContainer.appendChild(scoop);
 
         scoopCount++;
 
-
         updatePayButton();
 
-      }
-    );
+    });
 
-  }
-);
+});
 
 
-/* =========================================================
-   SAHNE
-========================================================= */
+/* =========================
+   TOPPINGS
+========================= */
 
-creamButton.addEventListener(
-  "click",
-  function() {
+const creamButton = document.getElementById("creamButton");
+const chocolateButton = document.getElementById("chocolateButton");
+const sprinklesButton = document.getElementById("sprinklesButton");
 
-    if (!waffleSelected) {
+const creamContainer = document.getElementById("creamContainer");
+const sauceContainer = document.getElementById("sauceContainer");
+const sprinklesContainer = document.getElementById("sprinklesContainer");
 
-      alert(
-        "Such dir zuerst eine Waffel aus! 🍦"
-      );
+let creamActive = false;
+let chocolateActive = false;
+let sprinklesActive = false;
 
-      return;
+
+/* SAHNE */
+
+creamButton.addEventListener("click", () => {
+
+    creamActive = !creamActive;
+
+    creamButton.classList.toggle("active", creamActive);
+
+    if (creamActive) {
+
+        creamContainer.innerHTML = `
+            <div class="whipped-cream">
+
+                <div class="cream-blob"></div>
+                <div class="cream-blob"></div>
+                <div class="cream-blob"></div>
+                <div class="cream-blob"></div>
+                <div class="cream-blob"></div>
+
+            </div>
+        `;
+
+    } else {
+
+        creamContainer.innerHTML = "";
+
     }
 
+});
 
-    if (creamAdded) {
 
-      creamAdded = false;
+/* SCHOKOSOßE */
 
-      creamButton.classList.remove(
-        "active"
-      );
+chocolateButton.addEventListener("click", () => {
 
-      const cream =
-        document.querySelector(
-          ".whipped-cream"
-        );
+    chocolateActive = !chocolateActive;
 
-      if (cream)
-        cream.remove();
+    chocolateButton.classList.toggle("active", chocolateActive);
 
-      return;
+    if (chocolateActive) {
+
+        sauceContainer.innerHTML = `
+            <div class="chocolate-sauce">
+
+                <div class="sauce-top"></div>
+
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+
+            </div>
+        `;
+
+    } else {
+
+        sauceContainer.innerHTML = "";
+
     }
 
-
-    creamAdded = true;
-
-    creamButton.classList.add(
-      "active"
-    );
+});
 
 
-    const cream =
-      document.createElement("div");
+/* STREUSEL */
 
-    cream.className =
-      "whipped-cream";
+sprinklesButton.addEventListener("click", () => {
 
-    selectedCone.appendChild(
-      cream
-    );
+    sprinklesActive = !sprinklesActive;
 
-  }
-);
+    sprinklesButton.classList.toggle("active", sprinklesActive);
 
+    if (sprinklesActive) {
 
-/* =========================================================
-   SCHOKOSOSSE
-========================================================= */
+        sprinklesContainer.innerHTML = `
+            <div class="sprinkles">
 
-chocolateButton.addEventListener(
-  "click",
-  function() {
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
+                <div class="sprinkle"></div>
 
-    if (!waffleSelected) {
+            </div>
+        `;
 
-      alert(
-        "Such dir zuerst eine Waffel aus! 🍦"
-      );
+    } else {
 
-      return;
+        sprinklesContainer.innerHTML = "";
+
     }
 
-
-    if (chocolateAdded) {
-
-      chocolateAdded = false;
-
-      chocolateButton.classList.remove(
-        "active"
-      );
-
-      const sauce =
-        document.querySelector(
-          ".chocolate-sauce"
-        );
-
-      if (sauce)
-        sauce.remove();
-
-      return;
-    }
+});
 
 
-    chocolateAdded = true;
+/* =========================
+   BEZAHLEN
+========================= */
 
-    chocolateButton.classList.add(
-      "active"
-    );
-
-
-    const sauce =
-      document.createElement("div");
-
-    sauce.className =
-      "chocolate-sauce";
-
-    selectedCone.appendChild(
-      sauce
-    );
-
-  }
-);
-
-
-/* =========================================================
-   STREUSEL
-========================================================= */
-
-sprinklesButton.addEventListener(
-  "click",
-  function() {
-
-    if (!waffleSelected) {
-
-      alert(
-        "Such dir zuerst eine Waffel aus! 🍦"
-      );
-
-      return;
-    }
-
-
-    if (sprinklesAdded) {
-
-      sprinklesAdded = false;
-
-      sprinklesButton.classList.remove(
-        "active"
-      );
-
-      const sprinkles =
-        document.querySelector(
-          ".sprinkles"
-        );
-
-      if (sprinkles)
-        sprinkles.remove();
-
-      return;
-    }
-
-
-    sprinklesAdded = true;
-
-    sprinklesButton.classList.add(
-      "active"
-    );
-
-
-    const sprinkles =
-      document.createElement("div");
-
-    sprinkles.className =
-      "sprinkles";
-
-    sprinkles.innerHTML =
-      "🌈✨🌈<br>✨🌈✨";
-
-    selectedCone.appendChild(
-      sprinkles
-    );
-
-  }
-);
-
-
-/* =========================================================
-   BEZAHL-BUTTON
-========================================================= */
+const payButton = document.getElementById("payButton");
+const paymentOverlay = document.getElementById("paymentOverlay");
 
 function updatePayButton() {
 
-  if (
-    waffleSelected &&
-    scoopCount > 0
-  ) {
+    if (scoopCount > 0) {
 
-    payButton.disabled =
-      false;
+        payButton.classList.add("enabled");
 
-  } else {
+    } else {
 
-    payButton.disabled =
-      true;
-
-  }
-
-}
-
-
-/* =========================================================
-   BEZAHLEN
-========================================================= */
-
-payButton.addEventListener(
-  "click",
-  function() {
-
-    if (
-      !waffleSelected ||
-      scoopCount === 0
-    ) {
-
-      return;
+        payButton.classList.remove("enabled");
 
     }
 
+}
 
-    paymentOverlay.classList.add(
-      "show"
-    );
+payButton.addEventListener("click", () => {
 
+    if (scoopCount === 0) {
+        return;
+    }
 
-    /*
-      Kurz den Bezahlbildschirm
-      anzeigen.
-    */
+    paymentOverlay.style.display = "flex";
 
-    setTimeout(
-      function() {
+    setTimeout(() => {
 
-        paymentOverlay.classList.remove(
-          "show"
-        );
+        paymentOverlay.style.display = "none";
+        icePage.style.display = "none";
+        finalPage.style.display = "flex";
 
+    }, 2200);
 
-        icePage.classList.remove(
-          "active"
-        );
-
-
-        finalPage.classList.add(
-          "active"
-        );
-
-
-        window.scrollTo(
-          0,
-          0
-        );
-
-      },
-      2200
-    );
-
-  }
-);
+});
 
 </script>
 
